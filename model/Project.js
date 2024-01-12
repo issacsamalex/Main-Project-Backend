@@ -1,18 +1,40 @@
-const express = require('express');
-const router = express.Router();
-const connectToMongoDB = require('../config/dbConnection');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
 
-
-router.get('/', async (req, res) => {
-    try {
-        const { client, database } = await connectToMongoDB();
-        const collection = database.collection('projectDetails');
-        const projectDetails = await collection.find({}).toArray();
-        res.json(projectDetails);
-    } catch (error) {
-        console.error('Error retrieving data from MongoDB Atlas:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+const projectSchema = new Schema({
+    title: {
+        type: String
+    },
+    subtitle: {
+        type: String
+    },
+    description: {
+        type: String
+    },
+    docs: {
+        type: String
+    },
+    img: {
+        type: String
+    },
+    reference: [
+        {
+            link1: String,
+            link2: String
+        },
+        {
+            link1: String,
+            link2: String
+        },
+        {
+            link1: String,
+            link2: String
+        },
+        {
+            link1: String,
+            link2: String
+        }
+    ]
 });
 
-module.exports = router;
+module.exports = mongoose.model('projectdetail', projectSchema);

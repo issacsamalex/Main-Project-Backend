@@ -1,20 +1,50 @@
+require('dotenv').config();
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-app.use(cors())
-require('dotenv').config()
+const connectDB = require('./config/dbConnection');
+const signupRoutes = require('./routes/signup');
+const projectRoutes = require('./routes/projectRoutes');
+
+
+
+
+
 const PORT = process.env.PORT
-const connectToMongoDB = require('./config/dbConnection')
-const projectDetails = require('./model/Project')
-connectToMongoDB()
 
-app.use('/projects', projectDetails);
+// Connect to MongoDB
+const newConnectDB = async () => {
+    try {
+        await connectDB();
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+// Cross Origin Resource Sharing
+app.use(cors())
+
+// built-in middleware to handle urlencoded form data
+app.use(express.urlencoded({extended: false}));
+
+// built-in middleware for json
+app.use(express.json());
+
+//middlewares
+app.use(bodyParser.json());
+
+//Routes
+app.use('/api/v1/auth', signupRoutes);
+
+app.use('/api/v1/dash/student_dash', projectRoutes);
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+newConnectDB().then(() => {
+    app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
+})
 
 
