@@ -10,7 +10,8 @@ const handleLogin = async (req, res) => {
             bcrypt.compare(password, user.password, (err, result)=>{
                 if(err || !result) return res.status(401).send(err || "wrong password")
                 const accessToken = JWT.sign({ username }, process.env.ACCESS_TOKEN_SECRET);
-                return res.status(201).send({accessToken})
+                const userID = user._id
+                return res.status(201).send({accessToken, userID})
             })
         })
         .catch(err => {

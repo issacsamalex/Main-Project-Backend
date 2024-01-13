@@ -7,6 +7,9 @@ router.route('/')
     .get(projectController.getAllProjects)
 
 
+router.route('/selected/:id')
+    .get(projectController.getOneProject)
+
 
 
 

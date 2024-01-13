@@ -33,4 +33,42 @@ const getAllUserData = async (req, res) => {
   }
 };
 
-module.exports = {getAllUserData};
+const updateUser = async (req, res) => {
+  if(!req?.params?.id){
+    return res.status(400).json({'message': 'ID parameter is required'});
+  }
+  try {
+    const id = req.params.id;
+    const user = await User.findById(id);
+    if(!user){
+      return res.status(204).json({'message': `No user matches ID ${req.params.id}`});
+    }
+    const updatedUser = await User.findByIdAndUpdate(id, req.body);
+    res.status(200).json({'message': 'user updated successfully'})
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+const getOneUser = async (req, res) => {
+  if(!req?.params?.id){
+    return res.status(400).json({'message': 'ID parameter is required'});
+  }
+  try {
+    const id = req.params.id
+    const oneUser = await User.findById(id)
+    if(!oneUser){
+      return res.status(204).json({'message': `No user matches ID ${req.params.id}`});
+    }
+    res.json(oneUser)
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+module.exports = {
+  getAllUserData,
+  updateUser,
+  getOneUser
+
+};

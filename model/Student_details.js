@@ -16,6 +16,9 @@ const studentSchema = new Schema({
     },
     project_id: {
         type: Schema.Types.ObjectId
+    },
+    enrolled_date: {
+        type: Date
     }
 })
 
