@@ -14,6 +14,15 @@ const projectSchema = new Schema({
     docs: {
         type: String
     },
+    weeklyreport: {
+        type: String
+    },
+    vivavocereport: {
+        type: String
+    },
+    finalreport: {
+        type: String
+    },
     img: {
         type: String
     },

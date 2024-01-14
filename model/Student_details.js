@@ -19,6 +19,24 @@ const studentSchema = new Schema({
     },
     enrolled_date: {
         type: Date
+    },
+    week1sub: {
+        type: String
+    },
+    week2sub: {
+        type: String
+    },
+    week3sub: {
+        type: String
+    },
+    week4sub: {
+        type: String
+    },
+    finalsub: {
+        type: String
+    },
+    vivasub: {
+        type: String
     }
 })
 
