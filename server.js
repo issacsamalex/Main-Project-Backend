@@ -9,7 +9,7 @@ const signupRoutes = require('./routes/signup');
 const loginRoutes = require('./routes/login');
 const projectRoutes = require('./routes/projectRoutes');
 const studentRoutes = require('./routes/studentRoute')
-
+const postRoute = require('./routes/postRoute')
 
 
 
@@ -42,6 +42,7 @@ app.use('/api/v1/auth', signupRoutes);
 app.use('/api/v1/auth', loginRoutes);
 app.use('/api/v1/dash/student',studentRoutes)
 app.use('/api/v1/dash/project', projectRoutes);
+app.use('/api/v1/post',postRoute)
 
 
 
