@@ -14,7 +14,7 @@ const createPost = async (req, res) => {
         }
 
         try {
-            // Remove the "Bearer " prefix
+
             const tokenWithoutPrefix = token.replace('Bearer ', '');
 
             // Attempt to decode and verify the token
