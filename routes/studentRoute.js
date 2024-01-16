@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const studentController = require('../controllers/studentController');
+const authToken = require('../middleware/authenticateToken');
 
 // Protected route to get student data
 router.route('/')

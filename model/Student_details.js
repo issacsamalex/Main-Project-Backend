@@ -37,7 +37,27 @@ const studentSchema = new Schema({
     },
     vivasub: {
         type: String
-    }
+    },
+    grades: [
+        {
+            week1garde: String
+        },
+        {
+            week2grade: String
+        },
+        {
+            week3grade: String
+        },
+        {
+            week4grade: String
+        },
+        {
+            finalgrade: String
+        },
+        {
+            vivagrade: String
+        }
+    ]
 })
 
 module.exports = mongoose.model('studentdetail', studentSchema);

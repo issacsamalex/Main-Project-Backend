@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const projectController = require('../controllers/projectController');
+const authToken = require('../middleware/authenticateToken');
 
 
 router.route('/')
