@@ -44,7 +44,13 @@ app.use('/api/v1/dash/student',studentRoutes)
 app.use('/api/v1/dash/project', projectRoutes);
 app.use('/api/v1/post',postRoute)
 
-
+// serve static files
+app.use(express.static(path.join(__dirname, './client/build')));
+app.get('*', function (_, res){
+    res.sendFile(path.join(__dirname, './client/build/index.html'), function(error){
+        res.status(500).send(error);
+    })
+})
 
 newConnectDB().then(() => {
     app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
