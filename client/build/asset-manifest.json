@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bf60c61c.css",
+    "main.js": "/static/js/main.b28bc858.js",
+    "reactPlayerPreview.js": "/static/js/reactPlayerPreview.f385df67.chunk.js",
+    "static/media/hero-section-illustration.png": "/static/media/hero-section-illustration.46708b9d9d297599a4f9.png",
+    "static/media/main-logo.png": "/static/media/main-logo.6933c317788b5753780d.png",
+    "index.html": "/index.html",
+    "main.bf60c61c.css.map": "/static/css/main.bf60c61c.css.map",
+    "main.b28bc858.js.map": "/static/js/main.b28bc858.js.map",
+    "reactPlayerPreview.f385df67.chunk.js.map": "/static/js/reactPlayerPreview.f385df67.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf60c61c.css",
+    "static/js/main.b28bc858.js"
+  ]
+}
