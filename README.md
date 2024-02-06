@@ -3,7 +3,7 @@ ICTAK Internship Portal
 Description:
 Designed and developed an Internship Portal for ICTAK (Information and Communication Technology Academy of Kerala), providing a platform for students to explore, select, and manage their internships. The portal streamlines the internship process, allowing students to register, choose project topics, and monitor their progress through weekly submissions and project reports.
 
-Tech Stack:
+Tech Stack: /n
 Frontend: React.js
 Backend: Node.js, Express.js
 Database: MongoDB
